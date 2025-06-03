@@ -1,0 +1,90 @@
+<Window x:Class="RecallShield.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="RecallShield" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,20">
+            <TextBlock Text="RecallShield" 
+                     FontSize="32" 
+                     FontWeight="Bold" 
+                     Foreground="#1E88E5"/>
+            <TextBlock Text="Protect your screen. Protect your privacy."
+                     FontSize="16"
+                     Foreground="#666666"
+                     Margin="0,5,0,0"/>
+        </StackPanel>
+
+        <!-- Main Content -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Recall Protection -->
+            <Border Grid.Column="0" 
+                    Background="White" 
+                    CornerRadius="10" 
+                    Margin="0,0,10,0"
+                    Padding="20">
+                <StackPanel>
+                    <TextBlock Text="Recall Protection"
+                             FontSize="20"
+                             FontWeight="SemiBold"
+                             Margin="0,0,0,15"/>
+                    <TextBlock Text="Blocks Microsoft's Recall feature from capturing and storing your screen activity."
+                             TextWrapping="Wrap"
+                             Margin="0,0,0,20"/>
+                    <ToggleButton x:Name="RecallToggle"
+                                Height="40"
+                                Content="Enable Recall Protection"
+                                Style="{StaticResource {x:Type ToggleButton}}"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Screenshot Protection -->
+            <Border Grid.Column="1" 
+                    Background="White" 
+                    CornerRadius="10" 
+                    Margin="10,0,0,0"
+                    Padding="20">
+                <StackPanel>
+                    <TextBlock Text="Screenshot Protection"
+                             FontSize="20"
+                             FontWeight="SemiBold"
+                             Margin="0,0,0,15"/>
+                    <TextBlock Text="Prevents unauthorized screen captures through Print Screen, Snipping Tool, and other methods."
+                             TextWrapping="Wrap"
+                             Margin="0,0,0,20"/>
+                    <ToggleButton x:Name="ScreenshotToggle"
+                                Height="40"
+                                Content="Enable Screenshot Protection"
+                                Style="{StaticResource {x:Type ToggleButton}}"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <!-- Footer -->
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right"
+                    Margin="0,20,0,0">
+            <TextBlock Text="Running in system tray"
+                     Foreground="#666666"
+                     VerticalAlignment="Center"
+                     Margin="0,0,10,0"/>
+            <Button Content="Minimize to Tray"
+                    Padding="15,8"
+                    Click="MinimizeToTray_Click"/>
+        </StackPanel>
+    </Grid>
+</Window> 
